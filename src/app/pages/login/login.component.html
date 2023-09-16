@@ -1,0 +1,17 @@
+<div class="login-container">
+    <div class="login-panel p-d-flex p-jc-center p-ai-center">
+        <div class="p-fluid">
+            <h2 class="p-text-center">LAMANA</h2>
+            <div class="p-field">
+                <input id="email" type="email" pInputText [(ngModel)]="usuario.email" placeholder="E-mail"/>
+            </div>
+            <div class="p-field">
+                <input id="senha" type="password" pInputText [(ngModel)]="usuario.senha" placeholder="Senha"/>
+            </div>
+            <div class="button-container">
+                <button pButton label="Entrar" (click)="validar()"></button>
+                <button pButton label="Registre-se"></button>
+            </div>
+        </div>
+    </div>
+</div>
