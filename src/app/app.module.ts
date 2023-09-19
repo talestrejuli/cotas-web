@@ -76,7 +76,7 @@ import {TagModule} from 'primeng/tag';
 import {TerminalModule} from 'primeng/terminal';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import {TimelineModule} from 'primeng/timeline';
-import {ToastModule} from 'primeng/toast';
+import {Toast, ToastModule} from 'primeng/toast';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ToolbarModule} from 'primeng/toolbar';
 import {TooltipModule} from 'primeng/tooltip';
@@ -144,6 +144,9 @@ import {MenuService} from './app.menu.service';
 import {AppCodeModule} from './blocks/app-code/app.code.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+
 
 @NgModule({
     imports: [
@@ -231,6 +234,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
+        ReactiveFormsModule,
+        ToastModule
     ],
     declarations: [
         AppComponent,
@@ -278,7 +283,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, BreadcrumbService, ConfigService
+        PhotoService, ProductService, MenuService, BreadcrumbService, ConfigService, MessageService
     ],
     bootstrap: [AppComponent]
 })

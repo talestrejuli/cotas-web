@@ -1,1 +1,60 @@
-<p>registro works!</p>
+<p-toast></p-toast>
+<div class="login-container">
+    <div class="login-panel p-d-flex p-jc-center p-ai-center">
+        <div class="p-fluid">
+            <h2 class="p-text-center">Formulário de Cadastro</h2>
+            <form #f="ngForm" (ngSubmit)="onSubmit()">
+                <div class="p-field">
+                    <input [(ngModel)]="nome" name="nome" type="text" pInputText placeholder="Nome completo" required (blur)="onBlur('nome')"/>
+                </div>
+                <div class="p-field">
+                    <input [(ngModel)]="email" name="email" type="email" pInputText placeholder="E-mail" required (blur)="onBlur('email')"/>
+                </div>
+                <div class="p-field">
+                    <p-inputMask [(ngModel)]="dataNascimento" name="dataNascimento" mask="99/99/9999" type="text" placeholder="Data de Nascimento" required (onBlur)="onBlur('dataNascimento')"/>
+                </div>
+                <div class="p-field">
+                    <p-inputMask [(ngModel)]="telefone" name="telefone" mask="(99)99999-9999" type="text" placeholder="Telefone" required (onBlur)="onBlur('telefone')"/>
+                </div>
+                <div class="p-field">
+                    <div class="radioField">
+                        <legend>Aceita receber nossos avisos?</legend>
+                    </div>
+                    <div class="radioField">
+                        <input type="radio" name="aceitaAviso" id="S" [(ngModel)]="aceitaAviso" value="S" checked />
+                        <label>Sim</label>
+                    </div>
+                    <div class="radioField">
+                        <input type="radio" name="aceitaAviso" id="N" [(ngModel)]="aceitaAviso" value="N" />
+                        <label>Não</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="p-field">
+                        <p-inputMask [(ngModel)]="endereco.cep" name="cep" mask="99.999-999" placeholder="CEP" required (onBlur)="onBlur('cep')"/>
+                    </div>
+                    <div class="p-field">
+                        <input [(ngModel)]="endereco.logradouro" name="logradouro" type="text" pInputText placeholder="Logradouro" required (blur)="onBlur('logradouro')"/>
+                    </div>
+                    <div class="p-field">
+                        <input [(ngModel)]="endereco.bairro" name="bairro" type="text" pInputText placeholder="Bairro" required (blur)="onBlur('bairro')"/>
+                    </div>
+                    <div class="p-field-cid">
+                        <input [(ngModel)]="endereco.cidade" name="cidade" type="text" pInputText placeholder="Cidade" required (blur)="onBlur('cidade')"/>
+                        <p-dropdown [(ngModel)]="endereco.uf" name="uf" placeholder="UF" [options]="cidades" optionLabel="nome" optionValue="nome" required></p-dropdown>
+                    </div>
+                    <div class="p-field">
+                        <input [(ngModel)]="endereco.numero" name="numero" type="text" pInputText placeholder="Número" required (blur)="onBlur('numero')"/>
+                    </div>
+                    <div class="p-field">
+                        <input [(ngModel)]="endereco.complemento" name="complemento" type="text" pInputText placeholder="Complemento (opcional)"/>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" pButton label="Cadastrar"></button>
+                    <button (click)='cancelRegistro()' pButton label="Cancelar"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

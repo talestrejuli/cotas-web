@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
-import { UsuarioService } from '../../services/usuario.service'; 
+import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent {
 
   usuario: Usuario = new Usuario();
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   validar() {
     this.usuarioService.validarUsuario(this.usuario).subscribe(
@@ -24,6 +25,10 @@ export class LoginComponent {
         console.error('Erro na validação:', error);
       }
     );
+  }
+
+  redirectToRegistro() {
+    this.router.navigate(['/registro']);
   }
   
 }
