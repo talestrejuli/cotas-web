@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { NgForm } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 
 interface Cidade {
   nome: string;
@@ -93,35 +92,76 @@ export class RegistroComponent implements OnInit {
     };
   }
 
-  onSubmit() {
-    const formData = this.getFormData();
+  @ViewChild(NgForm) form: NgForm;
 
-    this.http.post('http://localhost:8080/usuarios', formData).subscribe(response => {
-        console.log('Cadastro realizado com sucesso!', response);
-        this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
-    }, error => {
-        if (error.status === 400 && Array.isArray(error.error)) {
-            // Mostrando as mensagens de erro retornadas pelo backend
-            error.error.forEach(errMsg => {
-                console.error(errMsg);
-                this.messageService.add({severity:'error', summary:'Erro', detail: errMsg});
-            });
-        } else {
-            console.error('Erro ao realizar cadastro', error);
-            this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
-        }
-    });
-}
-
-@ViewChild(NgForm) form: NgForm;
-
-onBlur(fieldName: string) {
-  console.log('onBlur function called for', fieldName);
-  const control = this.form.form.get(fieldName);
-  if (control) {
-      control.markAsTouched();
-      control.markAsDirty();
+  registroSucess() {
+    this.router.navigate(['/login']);
   }
+
+  isFieldInvalid(field: string): boolean {
+    return this.form.controls[field].invalid && this.form.controls[field].dirty;
+  }
+
+  
+  onSubmit() {
+    if (this.form.valid) {
+        const formData = this.getFormData();
+
+        this.http.post('http://localhost:8080/usuarios', formData).subscribe(response => {
+            console.log('Cadastro realizado com sucesso!', response);
+            this.registroSucess();
+            this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
+        }, error => {
+            console.log(error); // Para diagnosticar a estrutura do erro
+
+            const errorMessage = error.error.message || error.message || error.error;
+
+            if (error.status === 400 && errorMessage === "E-mail já registrado.") {
+                console.error(errorMessage);
+                this.messageService.add({severity:'error', summary:'Erro', detail: "E-mail já registrado. Por favor, use outro e-mail."});
+            } else {
+                console.error('Erro ao realizar cadastro', error);
+                this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
+            }
+        });
+    } else {
+        // Se o formulário não for válido, verifica cada campo e exibe a mensagem toast correspondente
+        Object.keys(this.form.controls).forEach(field => {
+          const control = this.form.controls[field];
+          control.markAllAsTouched();
+        });
+        if (this.form.controls.nome.invalid) {
+            this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Nome é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.email.invalid) {
+            this.messageService.add({severity:'error', summary:'Erro', detail:'O campo E-mail é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.dataNascimento.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Data de Nascimento é de preenchimento obrigatório.'});
+          this.form.controls['nome'].markAsDirty();
+        }
+        if (this.form.controls.telefone.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Telefone é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.cep.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo CEP é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.logradouro.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Logradouro é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.bairro.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Bairro é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.cidade.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Cidade é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.uf.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo UF é de preenchimento obrigatório.'});
+        }
+        if (this.form.controls.numero.invalid) {
+          this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Número é de preenchimento obrigatório.'});
+        }
+    }
 }
 
 

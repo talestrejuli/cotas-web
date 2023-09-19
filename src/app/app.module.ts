@@ -146,6 +146,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
 
 
 @NgModule({
@@ -278,7 +279,8 @@ import { MessageService } from 'primeng/api';
         BlocksComponent,
         BlockViewer,
         LoginComponent,
-        RegistroComponent
+        RegistroComponent,
+        SucessoRegistroComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -49,6 +49,6 @@ p-dropdown.ng-invalid.ng-touched {
     border: 1px solid red;
 }
 
-p-inputMask.ng-invalid.ng-dirty {
-    border: 1px solid red;
+.ng-invalid.ng-dirty {
+    border-color: red;
 }
