@@ -30,9 +30,10 @@ import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 import {BlocksComponent} from './blocks/blocks/blocks.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
             {path: '', redirectTo: '/login', pathMatch: 'full'},
             {path: 'registro', component: RegistroComponent},
             {path: '', redirectTo: '/registro', pathMatch: 'full'},
+            {path: 'sucesso-registro', component: SucessoRegistroComponent}
         ], {scrollPositionRestoration: 'enabled'})
     ],
     exports: [RouterModule]

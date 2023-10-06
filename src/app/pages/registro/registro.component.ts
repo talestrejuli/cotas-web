@@ -61,6 +61,8 @@ export class RegistroComponent implements OnInit {
 
   nome: string = '';
   email: string = '';
+  senha: string = '';
+  confirmarSenha: string = '';
   dataNascimento: String = '';
   telefone: string = '';
   aceitaAviso: string = '';
@@ -85,6 +87,7 @@ export class RegistroComponent implements OnInit {
       dataNascimento: this.dataNascimento,
       telefone: this.removeMask(this.telefone),  // Removendo máscara do telefone
       aceitaAviso: this.aceitaAviso,
+      senha: this.senha,
       endereco: {
         ...this.endereco,
         cep: this.removeMask(this.endereco.cep)  // Removendo máscara do CEP
@@ -95,7 +98,7 @@ export class RegistroComponent implements OnInit {
   @ViewChild(NgForm) form: NgForm;
 
   registroSucess() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/sucesso-registro']);
   }
 
   isFieldInvalid(field: string): boolean {
@@ -105,6 +108,7 @@ export class RegistroComponent implements OnInit {
   
   onSubmit() {
     if (this.form.valid) {
+      if(this.senha === this.confirmarSenha) {
         const formData = this.getFormData();
 
         this.http.post('http://localhost:8080/usuarios', formData).subscribe(response => {
@@ -124,6 +128,9 @@ export class RegistroComponent implements OnInit {
                 this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
             }
         });
+      }else{
+        this.messageService.add({severity:'error', summary:'Erro', detail:'As senhas não são iguais'})
+      }
     } else {
         // Se o formulário não for válido, verifica cada campo e exibe a mensagem toast correspondente
         Object.keys(this.form.controls).forEach(field => {

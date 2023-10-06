@@ -1,0 +1,27 @@
+.sucess-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.sucess-panel {
+    width: 450px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.imagem-sucesso{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.conteudo-central{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

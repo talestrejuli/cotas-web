@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sucesso-registro',
@@ -12,4 +13,9 @@ export class SucessoRegistroComponent {
     this.visible = true;
   }
 
+  constructor(private router: Router) {}
+
+  retornarLogin() {
+    this.router.navigate(['/login']);
+  }
 }

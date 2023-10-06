@@ -1,16 +1,16 @@
-<div class="login-container">
-    <div class="login-panel p-d-flex p-jc-center p-ai-center">
-        <div class="p-fluid">
-            <h2 class="p-text-center">LAMANA</h2>
-            <div class="p-field">
-                <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-                <p-dialog header="Header" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                </p-dialog>
-            </div>
+<div class="sucess-container">
+    <div class="sucess-panel">
+        <div class="conteudo-central">
+            <img class="imagem-sucesso" src="assets/img/sucesso.png" alt="imagem de sucesso">
+        </div>
+        <div class="conteudo-central">
+            <label>Cadastro realizado com sucesso!</label>
+        </div>
+        <div class="conteudo-central">
+            <label>Enviamos um link de confirmação para o seu e-mail.</label>
+        </div>
+        <div class="conteudo-central">
+            <button (click)="retornarLogin()" pButton label="Realizar login"></button>
         </div>
     </div>
 </div>
