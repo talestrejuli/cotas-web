@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 interface Cidade {
   nome: string;
@@ -65,7 +65,7 @@ export class RegistroComponent implements OnInit {
   confirmarSenha: string = '';
   dataNascimento: String = '';
   telefone: string = '';
-  aceitaAviso: string = '';
+  aceitaAviso: string = 'S';
   endereco = {
     logradouro: '',
     bairro: '',
@@ -74,7 +74,8 @@ export class RegistroComponent implements OnInit {
     uf: '',
     numero: '',
     complemento: ''
-  }
+  };
+  email_confirmado: string = 'N';
 
   removeMask(value: string): string {
     return value.replace(/\D/g, '');
@@ -91,7 +92,8 @@ export class RegistroComponent implements OnInit {
       endereco: {
         ...this.endereco,
         cep: this.removeMask(this.endereco.cep)  // Removendo máscara do CEP
-      }
+      },
+      email_confirmado: this.email_confirmado
     };
   }
 
@@ -105,7 +107,15 @@ export class RegistroComponent implements OnInit {
     return this.form.controls[field].invalid && this.form.controls[field].dirty;
   }
 
-  
+  @ViewChild('dataNascimentoRef') dataNascimentoRef: NgModel;
+  @ViewChild('telefoneRef') telefoneRef: NgModel;
+  @ViewChild('cepRef') cepRef: NgModel;
+
+  marcarComoRequired(campo: NgModel) {
+    campo.control.markAsTouched();
+    campo.control.markAsDirty();
+  }
+
   onSubmit() {
     if (this.form.valid) {
       if(this.senha === this.confirmarSenha) {
@@ -136,6 +146,7 @@ export class RegistroComponent implements OnInit {
         Object.keys(this.form.controls).forEach(field => {
           const control = this.form.controls[field];
           control.markAllAsTouched();
+          control.markAsDirty();
         });
         if (this.form.controls.nome.invalid) {
             this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Nome é de preenchimento obrigatório.'});
@@ -145,7 +156,6 @@ export class RegistroComponent implements OnInit {
         }
         if (this.form.controls.dataNascimento.invalid) {
           this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Data de Nascimento é de preenchimento obrigatório.'});
-          this.form.controls['nome'].markAsDirty();
         }
         if (this.form.controls.telefone.invalid) {
           this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Telefone é de preenchimento obrigatório.'});
@@ -169,7 +179,7 @@ export class RegistroComponent implements OnInit {
           this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Número é de preenchimento obrigatório.'});
         }
     }
-}
+  }
 
 
 }

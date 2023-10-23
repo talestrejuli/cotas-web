@@ -17,10 +17,10 @@
                     <input [(ngModel)]="confirmarSenha" name="confirmarSenha" type="password" pInputText placeholder="Confirmar Senha" required #confirmarSenhaRef="ngModel">
                 </div>
                 <div class="p-field">
-                    <p-inputMask [(ngModel)]="dataNascimento" name="dataNascimento" mask="99/99/9999" type="text" placeholder="Data de Nascimento" required #dataNascimentoRef="ngModel"></p-inputMask>
+                    <p-inputMask [(ngModel)]="dataNascimento" name="dataNascimento" mask="99/99/9999" type="text" placeholder="Data de Nascimento" (onBlur)="marcarComoRequired(dataNascimentoRef)" required #dataNascimentoRef="ngModel"></p-inputMask>
                 </div>
                 <div class="p-field">
-                    <p-inputMask [(ngModel)]="telefone" name="telefone" mask="(99)99999-9999" type="text" placeholder="Telefone" required #telefoneRef="ngModel"></p-inputMask>
+                    <p-inputMask [(ngModel)]="telefone" name="telefone" mask="(99)99999-9999" type="text" placeholder="Telefone" (onBlur)="marcarComoRequired(telefoneRef)" required #telefoneRef="ngModel"></p-inputMask>
                 </div>
                 <div class="p-field">
                     <div class="radioField">
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <div class="p-field">
-                        <p-inputMask [(ngModel)]="endereco.cep" name="cep" mask="99.999-999" placeholder="CEP" required #cepRef="ngModel"></p-inputMask>
+                        <p-inputMask [(ngModel)]="endereco.cep" name="cep" mask="99.999-999" placeholder="CEP" (onBlur)="marcarComoRequired(cepRef)" required #cepRef="ngModel"></p-inputMask>
                     </div>
                     <div class="p-field">
                         <input [(ngModel)]="endereco.logradouro" name="logradouro" type="text" pInputText placeholder="Logradouro" required #logradouroRef="ngModel">

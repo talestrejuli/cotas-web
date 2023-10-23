@@ -45,10 +45,7 @@ input.ng-invalid.ng-touched {
     border: 1px solid red;
 }
 
-p-dropdown.ng-invalid.ng-touched {
-    border: 1px solid red;
-}
+.p-inputmask.ng-invalid.ng-touched .p-inputmask-slot {
+    border-color: red !important;
+  }  
 
-.ng-invalid.ng-dirty {
-    border-color: red;
-}
