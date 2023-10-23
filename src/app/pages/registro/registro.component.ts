@@ -121,7 +121,7 @@ export class RegistroComponent implements OnInit {
       if(this.senha === this.confirmarSenha) {
         const formData = this.getFormData();
 
-        this.http.post('http://localhost:8080/usuarios', formData).subscribe(response => {
+        this.http.post('http://localhost:8080/usuarios/cadastrar', formData).subscribe(response => {
             console.log('Cadastro realizado com sucesso!', response);
             this.registroSucess();
             this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
@@ -152,7 +152,11 @@ export class RegistroComponent implements OnInit {
             this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Nome é de preenchimento obrigatório.'});
         }
         if (this.form.controls.email.invalid) {
+          if (this.form.controls.email.errors.required) {
             this.messageService.add({severity:'error', summary:'Erro', detail:'O campo E-mail é de preenchimento obrigatório.'});
+          } else if (this.form.controls.email.errors.email) {
+            this.messageService.add({severity:'error', summary:'Erro', detail:'O formato do E-mail é inválido.'});
+          }
         }
         if (this.form.controls.dataNascimento.invalid) {
           this.messageService.add({severity:'error', summary:'Erro', detail:'O campo Data de Nascimento é de preenchimento obrigatório.'});
