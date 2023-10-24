@@ -131,12 +131,16 @@ export class RegistroComponent implements OnInit {
             const errorMessage = error.error.message || error.message || error.error;
 
             if (error.status === 400 && errorMessage === "E-mail já registrado.") {
-                console.error(errorMessage);
-                this.messageService.add({severity:'error', summary:'Erro', detail: "E-mail já registrado. Por favor, use outro e-mail."});
+              console.error(errorMessage);
+              this.messageService.add({severity:'error', summary:'Erro', detail: "E-mail já registrado. Por favor, use outro e-mail."});
+            } else if (error.status === 500 && errorMessage.includes("Duplicate entry") && errorMessage.includes("for key 'usuarios.email'")) {
+              console.error(errorMessage);
+              this.messageService.add({severity:'error', summary:'Erro', detail: "E-mail já registrado. Por favor, use outro e-mail."});
             } else {
-                console.error('Erro ao realizar cadastro', error);
-                this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
+              console.error('Erro ao realizar cadastro', error);
+              this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
             }
+          
         });
       }else{
         this.messageService.add({severity:'error', summary:'Erro', detail:'As senhas não são iguais'})
