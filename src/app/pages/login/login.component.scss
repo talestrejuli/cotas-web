@@ -3,13 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),    
-        url('../../../assets/img/watercolor-5062356_1920.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    */
+        radial-gradient(circle at 20% 30%, #5E81AC, transparent 50%),
+        linear-gradient(45deg, #5E81AC, transparent),
+        linear-gradient(-45deg, #5E81AC, transparent);
+    background-blend-mode: screen;
 }
 
 .login-panel {
