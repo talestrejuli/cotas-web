@@ -7,7 +7,6 @@ import { SeatComponent } from './seat.component';
 import { PersonalComponent } from './personal.component';
 import { ConfirmationComponent } from './confirmation.component';
 import { MenusComponent } from './menus.component';
-import { BlockUIModule } from 'ng-block-ui';
 
 @NgModule({
   declarations: [],
@@ -21,7 +20,7 @@ import { BlockUIModule } from 'ng-block-ui';
 				{path: 'seat', component: SeatComponent},
 				{path: 'payment', component: PaymentComponent}
         ]}
-    ]), BlockUIModule
+    ])
   ], 
   exports: [RouterModule]
 })

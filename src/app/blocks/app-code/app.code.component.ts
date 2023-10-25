@@ -1,6 +1,5 @@
 import { Component, ElementRef, AfterViewInit, Input, NgModule, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlockUIModule } from 'ng-block-ui';
 
 @Component({
     selector: 'app-code',
@@ -27,7 +26,7 @@ export class AppCodeComponent implements AfterViewInit {
 }
 
 @NgModule({
-    imports: [CommonModule, BlockUIModule],
+    imports: [CommonModule],
     exports: [AppCodeComponent],
     declarations: [AppCodeComponent]
 }) 

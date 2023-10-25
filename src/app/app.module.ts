@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import { BlockUIModule } from 'ng-block-ui';
 
 // PrimeNG Components for demos
 import {AccordionModule} from 'primeng/accordion';
@@ -241,7 +240,6 @@ import { CoreModule } from './core/core.module';
         VirtualScrollerModule,
         ReactiveFormsModule,
         ToastModule,
-        BlockUIModule
     ],
     declarations: [
         AppComponent,
