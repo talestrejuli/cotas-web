@@ -148,6 +148,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
 import { CoreModule } from './core/core.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { SpinnerInterceptor } from './interceptor/spinnerInterceptor';
 
 
 
@@ -240,6 +243,7 @@ import { CoreModule } from './core/core.module';
         VirtualScrollerModule,
         ReactiveFormsModule,
         ToastModule,
+        NgxSpinnerModule
     ],
     declarations: [
         AppComponent,
@@ -288,7 +292,8 @@ import { CoreModule } from './core/core.module';
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, BreadcrumbService, ConfigService, MessageService
+        PhotoService, ProductService, MenuService, BreadcrumbService, ConfigService, MessageService,
+        { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true }
     ],
     bootstrap: [AppComponent]
 })
