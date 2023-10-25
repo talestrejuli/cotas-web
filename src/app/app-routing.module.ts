@@ -34,7 +34,6 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
-import { BlockUIModule } from 'ng-block-ui';
 
 @NgModule({
     imports: [
@@ -45,7 +44,7 @@ import { BlockUIModule } from 'ng-block-ui';
             {path: '', redirectTo: '/registro', pathMatch: 'full'},
             {path: 'sucesso-registro', component: SucessoRegistroComponent}
         ], {scrollPositionRestoration: 'enabled'}), 
-        BlockUIModule
+        
     ],
     exports: [RouterModule]
 })

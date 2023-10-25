@@ -243,7 +243,8 @@ import { SpinnerInterceptor } from './interceptor/spinnerInterceptor';
         VirtualScrollerModule,
         ReactiveFormsModule,
         ToastModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        BrowserAnimationsModule
     ],
     declarations: [
         AppComponent,
