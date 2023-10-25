@@ -7,11 +7,12 @@ import { SeatComponent } from './seat.component';
 import { PersonalComponent } from './personal.component';
 import { ConfirmationComponent } from './confirmation.component';
 import { MenusComponent } from './menus.component';
+import { BlockUIModule } from 'ng-block-ui';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    CommonModule, 
     RouterModule.forChild([
         {path:'',component: MenusComponent, children:[
 				{path:'', redirectTo: 'personal', pathMatch: 'full'},
@@ -20,8 +21,8 @@ import { MenusComponent } from './menus.component';
 				{path: 'seat', component: SeatComponent},
 				{path: 'payment', component: PaymentComponent}
         ]}
-    ])
-  ],
+    ]), BlockUIModule
+  ], 
   exports: [RouterModule]
 })
 export class MenusModule { }

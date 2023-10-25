@@ -1,9 +1,10 @@
-import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { BlockUIModule } from 'ng-block-ui';
 
 // PrimeNG Components for demos
 import {AccordionModule} from 'primeng/accordion';
@@ -147,10 +148,13 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
+import { CoreModule } from './core/core.module';
+
 
 
 @NgModule({
     imports: [
+        CoreModule,
         BrowserModule,
         FormsModule,
         AppRoutingModule,
@@ -236,7 +240,8 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
         TreeTableModule,
         VirtualScrollerModule,
         ReactiveFormsModule,
-        ToastModule
+        ToastModule,
+        BlockUIModule
     ],
     declarations: [
         AppComponent,

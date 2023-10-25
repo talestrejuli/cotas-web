@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { NgForm, NgModel } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+
 
 interface Cidade {
   nome: string;
@@ -116,19 +118,22 @@ export class RegistroComponent implements OnInit {
     campo.control.markAsDirty();
   }
 
+  
+
   onSubmit() {
     if (this.form.valid) {
       if(this.senha === this.confirmarSenha) {
         const formData = this.getFormData();
 
-        this.http.post('http://localhost:8080/usuarios/cadastrar', formData).subscribe(response => {
+        this.http.post(`${environment.apiUrl}/usuarios/cadastrar`, formData).subscribe(response => {
             console.log('Cadastro realizado com sucesso!', response);
             this.registroSucess();
             this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
         }, error => {
             console.log(error); // Para diagnosticar a estrutura do erro
 
-            const errorMessage = error.error.message || error.message || error.error;
+            const errorMessage = error?.error?.message || error?.message || error?.error;
+            console.log("Erro completo: ", JSON.stringify(error, null, 2));
 
             if (error.status === 400 && errorMessage === "E-mail já registrado.") {
               console.error(errorMessage);
@@ -140,7 +145,6 @@ export class RegistroComponent implements OnInit {
               console.error('Erro ao realizar cadastro', error);
               this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
             }
-          
         });
       }else{
         this.messageService.add({severity:'error', summary:'Erro', detail:'As senhas não são iguais'})
