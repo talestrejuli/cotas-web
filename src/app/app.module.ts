@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 // PrimeNG Components for demos
@@ -150,7 +149,8 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
 import { CoreModule } from './core/core.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { SpinnerInterceptor } from './interceptor/spinnerInterceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
 
 
 
@@ -162,7 +162,6 @@ import { SpinnerInterceptor } from './interceptor/spinnerInterceptor';
         AppRoutingModule,
         AppCodeModule,
         HttpClientModule,
-        BrowserAnimationsModule,
         AccordionModule,
         AutoCompleteModule,
         AvatarModule,

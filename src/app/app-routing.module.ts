@@ -39,10 +39,8 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
     imports: [
         RouterModule.forRoot([
             {path: 'login', component: LoginComponent},
-            {path: '', redirectTo: '/login', pathMatch: 'full'},
             {path: 'registro', component: RegistroComponent},
-            {path: '', redirectTo: '/registro', pathMatch: 'full'},
-            {path: 'sucesso-registro', component: SucessoRegistroComponent}
+            {path: 'sucesso-registro', component: SucessoRegistroComponent},
         ], {scrollPositionRestoration: 'enabled'}), 
         
     ],
