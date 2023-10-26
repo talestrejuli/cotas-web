@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
 
   usuario: Usuario = new Usuario();
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) { }
 
   validar() {
     this.usuarioService.validarUsuario(this.usuario).subscribe(
@@ -29,6 +30,19 @@ export class LoginComponent {
 
   redirectToRegistro() {
     this.router.navigate(['/registro']);
+  }
+  
+  ngOnInit(): void {
+    // Verificar se existe algum parâmetro na URL indicando um erro de token
+    this.route.queryParams.subscribe(params => {
+      const tokenStatus = params['status'];
+  
+      if (tokenStatus === 'Token inválido') {
+        this.messageService.add({severity:'error', summary:'Erro', detail:'Token inválido.'});
+      } else if (tokenStatus === 'Token expirado') {
+        this.messageService.add({severity:'error', summary:'Erro', detail:'Token expirado.'});
+      }
+    });
   }
   
 }

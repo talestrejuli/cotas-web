@@ -3,16 +3,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(../../../assets/img/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner.jpg);
+    background: 
+      linear-gradient(rgba(59, 59, 59, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../../../assets/img/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner.jpg);
     background-size: cover;
-}
+  }
 
 .login-panel {
     width: 340px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: hsla(0, 0%, 0%, 0.2)
 }
 .button-container {
     margin-top: 30px;
@@ -26,10 +28,12 @@
 
 .p-field {
     margin-bottom: 30px; /* Adiciona um espaço de 20px abaixo de cada campo */
+    opacity: 0.8;
 }
 
 .logo {
     width: 300px;
     height: 100px;
     color: #5E81AC;
+    opacity: 0.8;
 }

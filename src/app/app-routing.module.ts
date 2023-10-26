@@ -34,6 +34,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-registro.component';
+import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
             {path: 'login', component: LoginComponent},
             {path: 'registro', component: RegistroComponent},
             {path: 'sucesso-registro', component: SucessoRegistroComponent},
+            {path: 'confirmar-email', component: ConfirmarEmailComponent}
         ], {scrollPositionRestoration: 'enabled'}), 
         
     ],

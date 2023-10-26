@@ -151,6 +151,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
+import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 
 
 
@@ -287,7 +288,8 @@ import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
         BlockViewer,
         LoginComponent,
         RegistroComponent,
-        SucessoRegistroComponent
+        SucessoRegistroComponent,
+        ConfirmarEmailComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
