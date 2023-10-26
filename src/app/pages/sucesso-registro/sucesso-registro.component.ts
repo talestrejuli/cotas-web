@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sucesso-registro',
@@ -13,9 +15,10 @@ export class SucessoRegistroComponent {
     this.visible = true;
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   retornarLogin() {
     this.router.navigate(['/login']);
   }
+
 }

@@ -43,14 +43,14 @@
                             <input [(ngModel)]="endereco.logradouro" name="logradouro" type="text" pInputText placeholder="Logradouro" required #logradouroRef="ngModel">
                         </div>
                         <div class="p-field">
+                            <input [(ngModel)]="endereco.numero" name="numero" type="text" pInputText placeholder="Número" required #numeroRef="ngModel">
+                        </div>
+                        <div class="p-field">
                             <input [(ngModel)]="endereco.bairro" name="bairro" type="text" pInputText placeholder="Bairro" required #bairroRef="ngModel">
                         </div>
                         <div class="p-field-cid">
                             <input [(ngModel)]="endereco.cidade" name="cidade" type="text" pInputText placeholder="Cidade" required #cidadeRef="ngModel">
                             <p-dropdown [(ngModel)]="endereco.uf" name="uf" placeholder="UF" [options]="cidades" optionLabel="nome" optionValue="nome" required></p-dropdown>
-                        </div>
-                        <div class="p-field">
-                            <input [(ngModel)]="endereco.numero" name="numero" type="text" pInputText placeholder="Número" required #numeroRef="ngModel">
                         </div>
                         <div class="p-field">
                             <input [(ngModel)]="endereco.complemento" name="complemento" type="text" pInputText placeholder="Complemento (opcional)" />
