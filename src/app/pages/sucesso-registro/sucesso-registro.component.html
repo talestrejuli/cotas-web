@@ -10,9 +10,12 @@
         <div class="conteudo-central">
             <label>Enviamos um link de confirmação para o seu e-mail.</label>
         </div>
+        <div class="conteudo-central">
+            <span>Aguarde: {{ counter$ | async }}s para reenviar o email</span>
+        </div>
         <div class="button-container">
             <button (click)="retornarLogin()" pButton label="Realizar login"></button>
-            <button (click)="reenviarEmail()" pButton label="Reenviar e-mail"></button>
+            <button (click)="reenviarEmail()" [disabled]="isButtonDisabled" pButton label="Reenviar e-mail"></button>
         </div>
     </div>
 </div>

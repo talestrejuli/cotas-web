@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { Observable, timer } from 'rxjs';
+import { map, takeWhile } from 'rxjs/operators';
 
 
 @Component({
@@ -11,6 +13,9 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./sucesso-registro.component.scss']
 })
 export class SucessoRegistroComponent implements OnInit {
+  counter$: Observable<number>;
+  isButtonDisabled = true;
+
   visible: boolean = false;
   email: string;
 
@@ -20,6 +25,18 @@ export class SucessoRegistroComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.email = params['email'];
     });
+
+      this.counter$ = timer(0, 1000).pipe(
+        map(tick => 60 - tick),
+        takeWhile(tick => tick >= 0)
+      );
+      
+      this.counter$.subscribe(tick => {
+        if (tick === 0) {
+          this.isButtonDisabled = false;
+        }
+      });
+    
   }
 
   showSuccess() {
