@@ -1,4 +1,5 @@
 <div class="sucess-container">
+<p-toast></p-toast>
     <div class="sucess-panel">
         <div class="conteudo-central">
             <img class="imagem-sucesso" src="assets/img/sucesso.png" alt="imagem de sucesso">
@@ -11,7 +12,7 @@
         </div>
         <div class="button-container">
             <button (click)="retornarLogin()" pButton label="Realizar login"></button>
-            <button pButton label="Reenviar e-mail"></button>
+            <button (click)="reenviarEmail()" pButton label="Reenviar e-mail"></button>
         </div>
     </div>
 </div>

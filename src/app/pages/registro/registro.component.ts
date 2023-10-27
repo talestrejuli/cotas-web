@@ -103,7 +103,7 @@ export class RegistroComponent implements OnInit {
   @ViewChild(NgForm) form: NgForm;
 
   registroSucess() {
-    this.router.navigate(['/sucesso-registro']);
+    this.router.navigate(['/sucesso-registro'], { queryParams: { email: this.email }});
   }
 
   isFieldInvalid(field: string): boolean {
@@ -127,7 +127,6 @@ export class RegistroComponent implements OnInit {
         const formData = this.getFormData();
 
         this.http.post(`${environment.apiUrl}/usuarios/cadastrar`, formData).subscribe(response => {
-            console.log('Cadastro realizado com sucesso!', response);
             this.registroSucess();
             this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
         }, error => {

@@ -75,7 +75,7 @@ import {TagModule} from 'primeng/tag';
 import {TerminalModule} from 'primeng/terminal';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import {TimelineModule} from 'primeng/timeline';
-import {Toast, ToastModule} from 'primeng/toast';
+import {ToastModule} from 'primeng/toast';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ToolbarModule} from 'primeng/toolbar';
 import {TooltipModule} from 'primeng/tooltip';
@@ -234,7 +234,6 @@ import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email
         TerminalModule,
         TimelineModule,
         TieredMenuModule,
-        ToastModule,
         ToggleButtonModule,
         ToolbarModule,
         TooltipModule,
