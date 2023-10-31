@@ -27,8 +27,14 @@
 }
 
 .p-field {
-    margin-bottom: 30px; /* Adiciona um espaço de 20px abaixo de cada campo */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adiciona um espaço de 20px abaixo de cada campo */
     opacity: 0.8;
+}
+
+.link-branco {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
 }
 
 .logo {

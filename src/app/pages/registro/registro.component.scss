@@ -32,6 +32,16 @@
     opacity: 0.8;
 }
 
+p-password {
+    opacity: 0.8;
+    margin-bottom: 15px;
+    width: 450px;
+}
+
+p-passoword .p-inputwrapper-focus {
+    z-index: 9999;
+}
+
 .p-field-cid {
     margin-bottom: 15px;
     display: flex;
@@ -54,4 +64,8 @@ input.ng-invalid.ng-touched {
 
 .p-inputmask.ng-invalid.ng-touched .p-inputmask-slot {
     border-color: red !important;
+}  
+
+p-password.p-inputwrapper-focus {
+    opacity: 1;
 }  

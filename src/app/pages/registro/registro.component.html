@@ -10,8 +10,8 @@
                     <div class="p-field">
                         <input [(ngModel)]="email" name="email" type="email" pInputText placeholder="E-mail" required email #emailRef="ngModel">
                     </div>
-                    <div class="p-field">
-                        <input [(ngModel)]="senha" name="senha" type="password" pInputText placeholder="Senha" required #senhaRef="ngModel">
+                    <div class="p-password">
+                        <p-password [(ngModel)]="senha" name="senha" [feedback]="true" placeholder="Senha" required #senhaRef="ngModel"/>
                     </div>
                     <div class="p-field">
                         <input [(ngModel)]="confirmarSenha" name="confirmarSenha" type="password" pInputText placeholder="Confirmar Senha" required #confirmarSenhaRef="ngModel">

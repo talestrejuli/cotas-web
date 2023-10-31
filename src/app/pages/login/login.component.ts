@@ -3,6 +3,7 @@ import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,10 @@ export class LoginComponent {
 
   redirectToRegistro() {
     this.router.navigate(['/registro']);
+  }
+
+  esqueciSenha() {
+    this.router.navigate([`${environment.webUrl}/esqueci-senha`])
   }
   
   ngOnInit(): void {

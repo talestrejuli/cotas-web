@@ -5,10 +5,13 @@
                 <img src="../../../assets/img/logo_branca_fundo_transparente (1).png" class="logo">
             </div> 
             <div class="p-field">
-                <input id="email" type="email" pInputText [(ngModel)]="usuario.email" placeholder="E-mail"/>
+                <input id="email" type="email" pInputText [(ngModel)]="usuario.email" placeholder="E-mail / Matrícula"/>
             </div>
             <div class="p-field">
                 <input id="senha" type="password" pInputText [(ngModel)]="usuario.senha" placeholder="Senha"/>
+            </div>
+            <div>
+                <a (click)="esqueciSenha()" class="link-branco">Esqueci minha senha</a>
             </div>
             <div class="button-container">
                 <button pButton label="Entrar" (click)="validar()"></button>

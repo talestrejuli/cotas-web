@@ -152,6 +152,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
 import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
+import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 
 
 
@@ -288,7 +289,8 @@ import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email
         LoginComponent,
         RegistroComponent,
         SucessoRegistroComponent,
-        ConfirmarEmailComponent
+        ConfirmarEmailComponent,
+        EsqueciSenhaComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -144,7 +144,7 @@ export class RegistroComponent implements OnInit {
             } else {
               console.error('Erro ao realizar cadastro', error);
               this.messageService.add({severity:'error', summary:'Erro', detail:'Erro ao realizar cadastro. Por favor, tente novamente mais tarde.'});
-            }
+            } 
         });
       }else{
         this.messageService.add({severity:'error', summary:'Erro', detail:'As senhas não são iguais'})
