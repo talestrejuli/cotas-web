@@ -3,7 +3,7 @@ import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { environment } from 'src/environments/environment';
+import { MensagemServico } from '../../services/mensagem/mensagemService';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,13 @@ export class LoginComponent {
 
   usuario: Usuario = new Usuario();
 
-  constructor(private usuarioService: UsuarioService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) { }
+  constructor(
+    private usuarioService: UsuarioService, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private messageService: MessageService,
+    private mensagemServico: MensagemServico
+    ) { }
 
   validar() {
     this.usuarioService.validarUsuario(this.usuario).subscribe(
@@ -38,6 +44,14 @@ export class LoginComponent {
   }
   
   ngOnInit(): void {
+    //Verifica a existência de mensagens
+    setTimeout(() => {
+      
+      const mensagem = this.mensagemServico.getMensagem();
+      if (mensagem) {
+        this.messageService.add(mensagem);
+      }
+
     // Verificar se existe algum parâmetro na URL indicando um erro de token
     this.route.queryParams.subscribe(params => {
       const tokenStatus = params['status'];
@@ -48,6 +62,11 @@ export class LoginComponent {
         this.messageService.add({severity:'error', summary:'Erro', detail:'Token expirado.'});
       }
     });
+  });
+
   }
+
+
+
   
 }
