@@ -1,0 +1,22 @@
+<p-toast></p-toast>
+<div class="login-container">
+    <div class="login-panel p-d-flex p-jc-center p-ai-center">
+        <div class="p-fluid">
+            <div>
+                <img src="../../../assets/img/logo_branca_fundo_transparente (1).png" class="logo">
+            </div> 
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div class="p-password">
+                    <p-password [(ngModel)]="senha" name="senha" placeholder="Digite sua nova senha" required #senhaRef="ngModel"/>
+                </div>
+                <div class="p-password">
+                    <p-password [(ngModel)]="confirmarSenha" [feedback]="false" name="confirmarSenha" placeholder="Confirmar Senha" required #confirmarSenhaRef="ngModel"/>
+                </div>
+                <div class="button-container">
+                    <button type="submit" pButton label="Confirmar"></button>
+                    <button (click)='retornarLogin()' pButton label="Cancelar"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

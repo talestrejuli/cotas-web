@@ -1,0 +1,51 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+      linear-gradient(rgba(59, 59, 59, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../../../assets/img/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner.jpg);
+    background-size: cover;
+  }
+
+.login-panel {
+    width: 340px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 0%, 0.2)
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between; /* ou 'space-around' para um espaçamento mais uniforme */
+
+    button {
+        margin: 0 8px; /* Adiciona um espaço de 5px entre os botões */
+        align-items: center;
+        display: flex;
+    }
+}
+
+p-password {
+    opacity: 0.8;
+    margin-bottom: 15px;
+    width: 450px;
+}
+
+p-passoword .p-inputwrapper-focus {
+    z-index: 9999;
+}
+
+p-password.p-inputwrapper-focus {
+    opacity: 1;
+}  
+
+.logo {
+    width: 300px;
+    height: 100px;
+    color: #5E81AC;
+    opacity: 0.8;
+}

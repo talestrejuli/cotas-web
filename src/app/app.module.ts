@@ -153,6 +153,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
 import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
+import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
 
 
 
@@ -290,7 +291,8 @@ import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.compo
         RegistroComponent,
         SucessoRegistroComponent,
         ConfirmarEmailComponent,
-        EsqueciSenhaComponent
+        EsqueciSenhaComponent,
+        RedefinirSenhaComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

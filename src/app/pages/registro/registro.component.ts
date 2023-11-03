@@ -58,9 +58,7 @@ export class RegistroComponent implements OnInit {
 
   cidadeSelecionada: Cidade | undefined;
 
-  ngOnInit(): void {
-    console.log(this.form);
-  }
+  ngOnInit(): void {}
 
   nome: string = '';
   email: string = '';
@@ -130,7 +128,6 @@ export class RegistroComponent implements OnInit {
             this.registroSucess();
             this.messageService.add({severity:'success', summary:'Sucesso', detail:'Cadastro realizado com sucesso!'});
         }, error => {
-            console.log(error); // Para diagnosticar a estrutura do erro
 
             const errorMessage = error?.error?.message || error?.message || error?.error;
             console.log("Erro completo: ", JSON.stringify(error, null, 2));
