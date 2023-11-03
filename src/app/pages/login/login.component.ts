@@ -34,7 +34,7 @@ export class LoginComponent {
   }
 
   esqueciSenha() {
-    this.router.navigate([`${environment.webUrl}/esqueci-senha`])
+    this.router.navigate([`/esqueci-senha`]);
   }
   
   ngOnInit(): void {

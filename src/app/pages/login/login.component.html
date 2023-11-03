@@ -11,7 +11,7 @@
                 <input id="senha" type="password" pInputText [(ngModel)]="usuario.senha" placeholder="Senha"/>
             </div>
             <div>
-                <a (click)="esqueciSenha()" class="link-branco">Esqueci minha senha</a>
+                <a class="link-branco" (click)="esqueciSenha()">Esqueci minha senha</a>
             </div>
             <div class="button-container">
                 <button pButton label="Entrar" (click)="validar()"></button>

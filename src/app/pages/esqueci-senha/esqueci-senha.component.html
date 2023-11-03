@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="login-container">
     <div class="login-panel p-d-flex p-jc-center p-ai-center">
         <div class="p-fluid">
@@ -5,7 +6,11 @@
                 <img src="../../../assets/img/logo_branca_fundo_transparente (1).png" class="logo">
             </div> 
             <div class="p-field">
-                <input id="email" type="email" pInputText placeholder="Digite seu E-mail"/>
+                <input id="email" [(ngModel)]="email" type="email" required email pInputText placeholder="Digite seu E-mail"/>
+            </div>
+            <div class="button-container">
+                <button pButton (click)="onSubmit()">Enviar email</button>
+                <button pButton (click)="retornarLogin()">Retornar ao login</button>
             </div>
         </div>
     </div>
