@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import {BreadcrumbService} from '../../breadcrumb.service';
-import {ProductService} from '../service/productservice';
-import {Product} from '../domain/product';
-import {AppConfig} from '../domain/appconfig';
-import {ConfigService} from '../service/app.config.service';
+import {ProductService} from '../../service/productservice';
+import {Product} from '../../domain/product';
+import {AppConfig} from '../../domain/appconfig';
+import {ConfigService} from '../../service/app.config.service';
 import {Subscription} from 'rxjs';
 
 @Component({

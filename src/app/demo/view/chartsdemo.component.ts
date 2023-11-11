@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {BreadcrumbService} from '../../breadcrumb.service';
 import {Subscription} from 'rxjs';
-import {AppConfig} from '../domain/appconfig';
-import {ConfigService} from '../service/app.config.service';
+import {AppConfig} from '../../domain/appconfig';
+import {ConfigService} from '../../service/app.config.service';
 
 @Component({
     templateUrl: './chartsdemo.component.html'

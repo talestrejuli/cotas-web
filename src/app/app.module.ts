@@ -116,7 +116,7 @@ import {TreeDemoComponent} from './demo/view/treedemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
 import {MediaDemoComponent} from './demo/view/mediademo.component';
-import {MenusComponent} from './demo/view/menus/menus.component';
+import {MenusComponent} from './pages/menus/menus.component';
 import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
 import {MiscDemoComponent} from './demo/view/miscdemo.component';
 import {EmptyDemoComponent} from './demo/view/emptydemo.component';
@@ -128,14 +128,14 @@ import {BlocksComponent} from './blocks/blocks/blocks.component';
 import {BlockViewer} from './blocks/blockviewer/blockviewer.component';
 
 // Demo services
-import {CountryService} from './demo/service/countryservice';
-import {EventService} from './demo/service/eventservice';
-import {NodeService} from './demo/service/nodeservice';
-import {CustomerService} from './demo/service/customerservice';
-import {PhotoService} from './demo/service/photoservice';
-import {ProductService} from './demo/service/productservice';
-import {IconService} from './demo/service/iconservice';
-import {ConfigService} from './demo/service/app.config.service';
+import {CountryService} from './service/countryservice';
+import {EventService} from './service/eventservice';
+import {NodeService} from './service/nodeservice';
+import {CustomerService} from './service/customerservice';
+import {PhotoService} from './service/photoservice';
+import {ProductService} from './service/productservice';
+import {IconService} from './service/iconservice';
+import {ConfigService} from './service/app.config.service';
 
 // Application services
 import {BreadcrumbService} from './breadcrumb.service';

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { ProductService } from '../service/productservice';
-import { PhotoService } from '../service/photoservice';
-import { Product } from '../domain/product';
+import { ProductService } from '../../service/productservice';
+import { PhotoService } from '../../service/photoservice';
+import { Product } from '../../domain/product';
 import { BreadcrumbService } from 'src/app/breadcrumb.service';
 
 @Component({

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CountryService} from '../service/countryservice';
+import {CountryService} from '../../service/countryservice';
 import {SelectItem} from 'primeng/api';
 import {BreadcrumbService} from '../../breadcrumb.service';
 
