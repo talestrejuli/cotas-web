@@ -37,6 +37,7 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
 import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
+import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.component';
 
 @NgModule({
     imports: [
@@ -46,7 +47,8 @@ import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha
             {path: 'sucesso-registro', component: SucessoRegistroComponent},
             {path: 'confirmar-email', component: ConfirmarEmailComponent},
             {path: 'esqueci-senha', component: EsqueciSenhaComponent},
-            {path: 'redefinir-senha', component: RedefinirSenhaComponent}
+            {path: 'redefinir-senha', component: RedefinirSenhaComponent},
+            {path: 'pagina-inicial', component: PaginaInicialComponent}
         ], {scrollPositionRestoration: 'enabled'}), 
         
     ],

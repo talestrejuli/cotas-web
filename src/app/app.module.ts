@@ -154,6 +154,7 @@ import { SpinnerInterceptor } from '../app/interceptor/spinner.interceptor';
 import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
+import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.component';
 
 
 
@@ -292,7 +293,8 @@ import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha
         SucessoRegistroComponent,
         ConfirmarEmailComponent,
         EsqueciSenhaComponent,
-        RedefinirSenhaComponent
+        RedefinirSenhaComponent,
+        PaginaInicialComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
