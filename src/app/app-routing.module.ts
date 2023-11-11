@@ -48,7 +48,7 @@ import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.co
             {path: 'confirmar-email', component: ConfirmarEmailComponent},
             {path: 'esqueci-senha', component: EsqueciSenhaComponent},
             {path: 'redefinir-senha', component: RedefinirSenhaComponent},
-            {path: 'pagina-inicial', component: PaginaInicialComponent}
+            {path: 'app-main', component: AppMainComponent}
         ], {scrollPositionRestoration: 'enabled'}), 
         
     ],
