@@ -37,7 +37,7 @@ import { SucessoRegistroComponent } from './pages/sucesso-registro/sucesso-regis
 import { ConfirmarEmailComponent } from './pages/confirmar-email/confirmar-email.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
-import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.component';
+import { PaginaInicialComponent } from './pages/usuario-externo/pagina-inicial/pagina-inicial.component';
 
 @NgModule({
     imports: [
@@ -48,7 +48,8 @@ import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.co
             {path: 'confirmar-email', component: ConfirmarEmailComponent},
             {path: 'esqueci-senha', component: EsqueciSenhaComponent},
             {path: 'redefinir-senha', component: RedefinirSenhaComponent},
-            {path: 'app-main', component: AppMainComponent}
+            {path: 'app-main', component: AppMainComponent},
+            {path: 'pagina-inicial', component: PaginaInicialComponent}
         ], {scrollPositionRestoration: 'enabled'}), 
         
     ],
