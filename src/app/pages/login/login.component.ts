@@ -65,7 +65,6 @@ export class LoginComponent {
         .subscribe({
           next: (response) => {
             // Sucesso no login
-            console.log('Login com e-mail realizado com sucesso!', response);
             this.router.navigate([`/app-main`]);
           },
           error: (error) => {
